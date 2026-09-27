@@ -43,3 +43,10 @@ target_include_directories(platform_region_defs
     INTERFACE
         partition
 )
+
+# Local fix (ticket #52): NS must use the same test flash layout as the secure side,
+# which enables FLASH_LAYOUT_FOR_TEST via TFM_S/NS_REG_TEST (stm32l5xx/CMakeLists.txt).
+target_compile_definitions(platform_region_defs
+    INTERFACE
+        FLASH_LAYOUT_FOR_TEST
+)
