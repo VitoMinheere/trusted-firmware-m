@@ -98,7 +98,9 @@ const RCC_PeriphCLKInitTypeDef  PeriphClkInitStruct_RTC =
     .Sai1ClockSelection = 0,
     .Sai2ClockSelection = 0,
     .RngClockSelection = 0,
+#if defined(SAES)
     .SaesClockSelection = 0,
+#endif /* SAES */
     .IclkClockSelection = 0,
     .SdmmcClockSelection = 0,
     .AdcDacClockSelection = 0,
