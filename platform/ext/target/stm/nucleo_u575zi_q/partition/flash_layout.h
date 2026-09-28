@@ -22,7 +22,8 @@
  * some of the values are redefined here with different names, these are marked
  * with comment.
  */
- /* Flash layout for b_u585i_iot02a  with BL2 (multiple image boot):
+ /* Flash layout for nucleo_u575zi_q with BL2 (multiple image boot),
+ * internal flash only (2 MB, 2 banks of 1 MB, 8 KB pages):
  *
  * Boot partition (384 KB):
  * 0x0000_0000 SCRATCH (64KB)
@@ -34,12 +35,11 @@
  * 0x0003_c000 Secure Storage Area (64 KB)
  * 0x0004_c000 Internal Trusted Storage Area (64 KB)
  * 0x0005_c000 > reserved for bootloader purposes (16k)
- * 0x0006_0000 Secure image     primary slot (512 KB)    Internal flash
- * 0x000f_0000 Non-secure image primary slot (1024 KB)   Internal flash
- * 0x001f_0000 User Defined     primary slot (128 KB)    Internal flash (ex. Zephyr storage)
- * 0x0000_0000 Secure image     secondary slot (512 KB)  External flash
- * 0x0008_0000 Non-secure image secondary slot (3072 KB) External flash
- * 0x0018_0000 > User Defined                            External flash
+ * 0x0006_0000 Secure image     primary slot (512 KB)
+ * 0x000e_0000 Non-secure image primary slot (256 KB)
+ * 0x0012_0000 Secure image     secondary slot (512 KB)
+ * 0x001a_0000 Non-secure image secondary slot (256 KB)
+ * 0x001e_0000 > Unused (128 KB)
  *
  * Bl2 binary is written at 0x1_2000:
  * it contains bl2_counter init value, OTP write protect, NV counters area init.
@@ -145,8 +145,7 @@
   bootloader and S fimware. This allows bootloader to be increased and have
   application code compatible between different bootloader regions.
 
-  The S firmware offset is now: 2MiB - Reserved (128k) - NS (1MiB) - S (512k) =>
-                            0x200000 -         0x20000 -  0x100000 -  0x80000 => 0x60000
+  The S firmware offset is 0x60000, the end of the 384 KB boot partition.
 */
 #define FLASH_AREA_0_OFFSET             (0x60000)                                                   /* @384 KB 0x60000 */
 
