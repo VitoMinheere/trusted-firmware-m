@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    board.h
   * @author  MCD Application Team
-  * @brief   board header file for stm32l562_dk.
+  * @brief   board header file for nucleo_u575zi_q.
   ******************************************************************************
   * @attention
   *
