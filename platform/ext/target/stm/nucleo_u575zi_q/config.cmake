@@ -33,7 +33,6 @@ set(MCUBOOT_FIH_PROFILE                    LOW         CACHE STRING    "Fault in
 set(CONFIG_TFM_USE_TRUSTZONE               ON          CACHE BOOL      "Use TrustZone")
 set(TFM_MULTI_CORE_TOPOLOGY                OFF         CACHE BOOL      "Platform has multi core")
 set(PLATFORM_HAS_FIRMWARE_UPDATE_SUPPORT   ON          CACHE BOOL      "Wheter the platform has firmware update support")
-set(STSAFEA                                OFF         CACHE BOOL      "Activate ST SAFE SUPPORT")
 
 ################################## FIRMWARE_UPDATE #############################################################################################
 set(TFM_PARTITION_FIRMWARE_UPDATE          ON          CACHE BOOL "Enable firmware update partition")
@@ -41,5 +40,4 @@ set(TFM_FWU_BOOTLOADER_LIB                 "mcuboot"   CACHE STRING    "Bootload
 set(TFM_CONFIG_FWU_MAX_WRITE_SIZE          1024        CACHE STRING    "The maximum permitted size for block in psa_fwu_write, in bytes.")
 set(TFM_CONFIG_FWU_MAX_MANIFEST_SIZE       0           CACHE STRING    "The maximum permitted size for manifest in psa_fwu_start(), in bytes.")
 set(FWU_DEVICE_CONFIG_FILE                 ""          CACHE STRING    "The device configuration file for Firmware Update partition")
-set(DMCUBOOT_UPGRADE_STRATEGY              SWAP_USING_MOVE)
 set(DEFAULT_MCUBOOT_FLASH_MAP             ON           CACHE BOOL     "Whether to use the default flash map defined by TF-M project")
